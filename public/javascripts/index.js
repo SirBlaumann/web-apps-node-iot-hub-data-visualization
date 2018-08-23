@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  var timeData = [],
-    temperatureData = [][], //data, deviceindex
-    humidityData = [][];//data, deviceindex
+  var timeData = [][],
+    temperatureData = [],
+    humidityData = [];
 	
   var data = {
     labels: timeData,
