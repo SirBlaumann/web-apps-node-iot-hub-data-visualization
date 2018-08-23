@@ -42,6 +42,11 @@ $(document).ready(function () {
       }
     ]
   }
+var deviceMap = [
+			{
+				id:"devDevice01",
+				index : 0
+			}]
 
   var basicOption = {
     title: {
@@ -58,7 +63,7 @@ $(document).ready(function () {
           display: true
         },
         position: 'left',
-      },{
+      }, {
           id: 'Humidity',
           type: 'linear',
           scaleLabel: {
@@ -66,15 +71,7 @@ $(document).ready(function () {
             display: true
           },
           position: 'right'
-        }, {
-        id: 'VentilationRPM',
-        type: 'linear',
-        scaleLabel: {
-          labelString: 'Vent (RPM)',
-          display: true
-        },
-        position: 'left',
-      }]
+        }]
     }
   }
 
@@ -115,13 +112,8 @@ $(document).ready(function () {
         humidityData.shift();
       }
 	  
-	   if (obj.VentilationRPM) {
-        ventData.push(obj.VentilationRPM);
-      }
-      if (ventData.length > maxLen) {
-        ventData.shift();
-      }
-	  
+
+
       myLineChart.update();
     } catch (err) {
       console.error(err);
