@@ -77,7 +77,7 @@ $(document).ready(function () {
       if(!obj.time || !obj.Temperature) {
         return;
       }
-      timeData.push(obj.time);
+      timeData.push(obj.TimeStamp);
       temperatureData.push(obj.Temperature);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
@@ -93,6 +93,8 @@ $(document).ready(function () {
       if (humidityData.length > maxLen) {
         humidityData.shift();
       }
+	  
+
 
       myLineChart.update();
     } catch (err) {
