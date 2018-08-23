@@ -1,7 +1,8 @@
 $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
-    humidityData = [];
+    humidityData = [],
+	ventData = [];
 	
   var data = {
     labels: timeData,
@@ -27,6 +28,17 @@ $(document).ready(function () {
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: humidityData
+      },
+      {
+        fill: false,
+        label: 'Vent RPM',
+        yAxisID: 'RPM',
+        borderColor: "rgba(120, 120, 240, 1)",
+        pointBoarderColor: "rgba(120, 120, 240, 1)",
+        backgroundColor: "rgba(120, 120, 240, 0.4)",
+        pointHoverBackgroundColor: "rgba(120, 120, 240, 1)",
+        pointHoverBorderColor: "rgba(120, 120, 240, 1)",
+        data: ventData
       }
     ]
   }
@@ -52,6 +64,14 @@ var deviceMap = [
         },
         position: 'left',
       }, {
+        id: 'VentilationRPM',
+        type: 'linear',
+        scaleLabel: {
+          labelString: 'Vent (RPM)',
+          display: true
+        },
+        position: 'left',
+      },{
           id: 'Humidity',
           type: 'linear',
           scaleLabel: {
@@ -100,8 +120,13 @@ var deviceMap = [
         humidityData.shift();
       }
 	  
-
-
+	   if (obj.VentilationRPM) {
+        ventData.push(obj.VentilationRPM);
+      }
+      if (ventData.length > maxLen) {
+        ventData.shift();
+      }
+	  
       myLineChart.update();
     } catch (err) {
       console.error(err);
