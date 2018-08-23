@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var timeData = [][],
+  var timeData = [],
     temperatureData = [],
     humidityData = [];
 	
@@ -15,7 +15,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: temperatureData[][]
+        data: temperatureData[]
       },
       {
         fill: false,
@@ -26,7 +26,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: humidityData[][]
+        data: humidityData[]
       }
     ]
   }
