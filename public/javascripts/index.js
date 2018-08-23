@@ -31,8 +31,8 @@ $(document).ready(function () {
       },
       {
         fill: false,
-        label: 'Ventilation',
-        yAxisID: 'Ventilation',
+        label: 'VentRPM',
+        yAxisID: 'VentRPM',
         borderColor: "rgba(120, 120, 240, 1)",
         pointBoarderColor: "rgba(120, 120, 240, 1)",
         backgroundColor: "rgba(120, 120, 240, 0.4)",
