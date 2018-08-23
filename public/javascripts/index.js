@@ -31,8 +31,8 @@ $(document).ready(function () {
       },
       {
         fill: false,
-        label: 'Vent RPM',
-        yAxisID: 'RPM',
+        label: 'VentRPM',
+        yAxisID: 'VentRPM',
         borderColor: "rgba(120, 120, 240, 1)",
         pointBoarderColor: "rgba(120, 120, 240, 1)",
         backgroundColor: "rgba(120, 120, 240, 0.4)",
@@ -42,11 +42,6 @@ $(document).ready(function () {
       }
     ]
   }
-var deviceMap = [
-			{
-				id:"devDevice01",
-				index : 0
-			}]
 
   var basicOption = {
     title: {
@@ -63,14 +58,6 @@ var deviceMap = [
           display: true
         },
         position: 'left',
-      }, {
-        id: 'VentilationRPM',
-        type: 'linear',
-        scaleLabel: {
-          labelString: 'Vent (RPM)',
-          display: true
-        },
-        position: 'left',
       },{
           id: 'Humidity',
           type: 'linear',
@@ -79,7 +66,15 @@ var deviceMap = [
             display: true
           },
           position: 'right'
-        }]
+        }, {
+        id: 'VentilationRPM',
+        type: 'linear',
+        scaleLabel: {
+          labelString: 'Vent (RPM)',
+          display: true
+        },
+        position: 'left',
+      }]
     }
   }
 
