@@ -55,6 +55,14 @@ $(document).ready(function () {
             display: true
           },
           position: 'right'
+        }, {
+          id: 'VentRPM',
+          type: 'linear',
+          scaleLabel: {
+            labelString: 'Ventilation(RPM)',
+            display: true
+          },
+          position: 'left'
         }]
     }
   }
