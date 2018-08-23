@@ -115,7 +115,12 @@ $(document).ready(function () {
         humidityData.shift();
       }
 	  
-
+	  if (obj.VentilationRPM) {
+        ventData.push(obj.VentilationRPM);
+      }
+      if (ventData.length > maxLen) {
+        ventData.shift();
+      }
 
       myLineChart.update();
     } catch (err) {
