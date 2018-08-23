@@ -1,7 +1,8 @@
 $(document).ready(function () {
   var timeData = [],
-    temperatureData = [],
-    humidityData = [];
+    temperatureData = [][], //data, deviceindex
+    humidityData = [][];//data, deviceindex
+	
   var data = {
     labels: timeData,
     datasets: [
@@ -14,7 +15,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: temperatureData
+        data: temperatureData[][]
       },
       {
         fill: false,
@@ -25,10 +26,15 @@ $(document).ready(function () {
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: humidityData
+        data: humidityData[][]
       }
     ]
   }
+var deviceMap = [
+			{
+				id:"devDevice01",
+				index : 0
+			}]
 
   var basicOption = {
     title: {
@@ -77,21 +83,21 @@ $(document).ready(function () {
       if(!obj.time || !obj.Temperature) {
         return;
       }
-      timeData.push(obj.TimeStamp);
-      temperatureData.push(obj.Temperature);
+      timeData[0].push(obj.TimeStamp);
+      temperatureData[0].push(obj.Temperature);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
-      var len = timeData.length;
+      var len = timeData[0].length;
       if (len > maxLen) {
         timeData.shift();
-        temperatureData.shift();
+        temperatureData[0].shift();
       }
 
       if (obj.Humidity) {
-        humidityData.push(obj.Humidity);
+        humidityData[0].push(obj.Humidity);
       }
-      if (humidityData.length > maxLen) {
-        humidityData.shift();
+      if (humidityData[0].length > maxLen) {
+        humidityData[0].shift();
       }
 	  
 
