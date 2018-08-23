@@ -28,6 +28,17 @@ $(document).ready(function () {
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: humidityData
+      },
+      {
+        fill: false,
+        label: 'Ventilation',
+        yAxisID: 'Ventilation',
+        borderColor: "rgba(120, 120, 240, 1)",
+        pointBoarderColor: "rgba(120, 120, 240, 1)",
+        backgroundColor: "rgba(120, 120, 240, 0.4)",
+        pointHoverBackgroundColor: "rgba(120, 120, 240, 1)",
+        pointHoverBorderColor: "rgba(120, 120, 240, 1)",
+        data: ventData
       }
     ]
   }
